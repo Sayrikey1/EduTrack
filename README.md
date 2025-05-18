@@ -97,9 +97,6 @@ sequenceDiagram
     User->>+Server: OTP Verification
     Server-->>-User: JWT Token
 ```
-<p align="center">
-    <img src="./read_me_images/screenshot.png" alt="Frontend Screenshot 1" width="50%" />
-</p>
 
 ### Key Protections
 - 🔑 PBKDF2 password hashing
