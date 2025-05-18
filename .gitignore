@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Django
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# Environment
+.env
+.env.*
+docker/dev.env
+docker/prod.env
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test & Coverage
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+test_db.sqlite3
+
+# Migrations (optional, if you don't want to track generated migrations)
+# **/migrations/*.py
+# !**/migrations/__init__.py
+
+# Docker
+*.pid
+
+# Others
+*.swp
+*.swo
+*.bak
+*.orig
+*.tmp
+
+# Ignore trash and utility scripts if not needed
+trash.py
+tree.py
+edutrack

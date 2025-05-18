@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    command: gunicorn core.wsgi:application --config docker/gunicorn.conf.py
+    volumes:
+      - .:/app
+    env_file:
+      - docker/prod.env
+    environment:
+      - HOST=${HOST:-0.0.0.0}
+      - PORT=${PORT:-8000}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - REDIS_URL=${REDIS_URL}
+    ports:
+      - "${PORT:-8000}:${PORT:-8000}"
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+
+volumes:
+  pgdata:
