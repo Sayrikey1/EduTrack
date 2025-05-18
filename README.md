@@ -4,8 +4,6 @@
 *Built with Django, Docker, and Service-Oriented Architecture*  
 [![CI/CD Status](https://github.com/Sayrikey1/EduTrack/actions/workflows/ci.yml/badge.svg)](https://github.com/Sayrikey1/EduTrack/actions) [![Docker Ready](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://hub.docker.com/r/sayrikey1/edutrack)
 
-![EduTrack Architecture Diagram](https://via.placeholder.com/800x400.png?text=EduTrack+System+Architecture)  
-*Replace with actual architecture diagram*
 
 ## 🌟 Key Features
 
@@ -99,6 +97,9 @@ sequenceDiagram
     User->>+Server: OTP Verification
     Server-->>-User: JWT Token
 ```
+<p align="center">
+    <img src="./read_me_images/screenshot.png" alt="Frontend Screenshot 1" width="50%" />
+</p>
 
 ### Key Protections
 - 🔑 PBKDF2 password hashing
